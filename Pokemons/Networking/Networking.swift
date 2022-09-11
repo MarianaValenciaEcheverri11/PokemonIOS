@@ -14,7 +14,7 @@ class Networking {
     
     func getPokemonList(completion: @escaping(DataResponse<Any>)->Void)
     {
-        let url = Apis.baseUrl + "pokemon?limit=100&offset=0"
+        let url = Apis.baseUrl + "pokemon?limit=1000&offset=0"
         Alamofire.request(url).responseJSON { (response) in
             completion(response)
         }

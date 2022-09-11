@@ -72,6 +72,8 @@ class PokemonsViewController: UIViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonTableViewCell") as! PokemonTableViewCell
             cell.setCell(specie: species[indexPath.row])
+            cell.layer.borderColor = UIColor.black.cgColor
+            cell.layer.borderWidth = 1
             return cell
         }
         

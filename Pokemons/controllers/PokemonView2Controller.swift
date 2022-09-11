@@ -77,19 +77,20 @@ extension PokemonsView2Controller: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as! PokemonCollectionViewCell
         cell.setCell(specie: species[indexPath.row])
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         specie = species[indexPath.row]
         pokemonDetailsController.initDetails(name: species[indexPath.row].name ?? "", url: species[indexPath.row].url!)
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                pokemonDetailsController = segue.destination as! PokemonDetailsController
               //  pokemonsView2Controller = segue.destination as! PokemonsView2Controller
-            
- 
     }
     
 }
